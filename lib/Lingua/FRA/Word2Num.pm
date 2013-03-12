@@ -4,19 +4,22 @@ package Lingua::FRA::Word2Num;
 # ABSTRACT: Word 2 number conversion in FRA.
 
 # {{{ use block
-#
+
+use 5.10.1;
+
 use strict;
 use warnings;
 
 use base qw(Exporter);
 
 use Parse::RecDescent;
+
 # }}}
 # {{{ variable declarations
 
-our $VERSION = 0.0577;
+our $VERSION = 0.0682;
 our $INFO    = {
-    rev  => '$Rev: 577 $',
+    rev  => '$Rev: 682 $',
 };
 
 our @EXPORT_OK  = qw(cardinal2num w2n);
@@ -146,11 +149,11 @@ __END__
 
 =head1 VERSION
 
-version 0.0577
+version 0.0682
 Lingua::FRA::Word2Num - text to positive number convertor for French.
 Input text must be encoded in utf-8.
 
-=head2 $Rev: 577 $
+=head2 $Rev: 682 $
 
 ISO 639-3 namespace.
 
