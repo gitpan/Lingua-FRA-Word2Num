@@ -17,9 +17,9 @@ use Parse::RecDescent;
 # }}}
 # {{{ variable declarations
 
-our $VERSION = 0.0682;
+our $VERSION = 0.1257;
 our $INFO    = {
-    rev  => '$Rev: 682 $',
+    rev  => '$Rev: 808 $',
 };
 
 our @EXPORT_OK  = qw(cardinal2num w2n);
@@ -146,16 +146,26 @@ __END__
 
 =head1 NAME
 
+=head2 Lingua::FRA::Word2Num 
 
 =head1 VERSION
 
-version 0.0682
-Lingua::FRA::Word2Num - text to positive number convertor for French.
-Input text must be encoded in utf-8.
+version 0.1257
 
-=head2 $Rev: 682 $
+Word 2 number conversion in FRA.
 
-ISO 639-3 namespace.
+Lingua::FRA::Word2Num is module for converting text containing number
+representation in French back into number. Converts whole numbers from 0 up
+to 999 999 999 999.
+
+Input text must be encoded in UTF-8.
+
+=cut
+
+# }}}
+# {{{ SYNOPSIS
+
+=pod
 
 =head1 SYNOPSIS
 
@@ -165,36 +175,47 @@ ISO 639-3 namespace.
 
  print defined($num) ? $num : "sorry, can't convert this text into number.";
 
-=head1 DESCRIPTION
-
-Word 2 number conversion in FRA.
-
-Lingua::FRA::Word2Num is module for converting text containing number
-representation in French back into number. Converts whole numbers from 0 up
-to 999 999 999 999.
 
 =cut
 
 # }}}
-# {{{ Functions reference
+# {{{ Functions Reference
 
 =pod
 
-=head2 Functions Reference
+=head1 Functions Reference
 
-=over
+=over 2
 
-=item w2n (positional)
+=item B<w2n> (positional)
 
-  1   string  string to convert
-  =>  number  converted number
-      undef   if input string is not known
+  1   str    string to convert
+  =>  num    converted number
+  =>  undef  if input string is not known
 
 Convert text representation to number.
 
-=item fr_numerals
+=item B<fr_numerals> (void)
+
+  =>  obj  new parser object
 
 Internal parser.
+
+=back
+
+=cut
+
+# }}}
+# {{{ EXPORTED FUNCTIONS
+
+=pod
+
+=head1 EXPORT_OK
+
+=over 2
+
+=item w2n
+
 
 =back
 
@@ -205,25 +226,15 @@ Internal parser.
 
 =pod
 
-=head1 EXPORT_OK
-
-w2n
-
-=head1 KNOWN BUGS
-
-None.
-
 =head1 AUTHOR
 
-Vitor Serra Mori <info@petamem.com>
+ coding, maintenance, refactoring, extensions, specifications:
+
+   Vitor Serra Mori <info@petamem.com>
 
 =head1 COPYRIGHT
 
 Copyright (C) PetaMem, s.r.o. 2004-present
-
-=head2 LICENSE
-
-Artistic license or BSD license.
 
 =cut
 
